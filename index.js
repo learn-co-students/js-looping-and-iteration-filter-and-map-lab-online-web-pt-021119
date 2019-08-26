@@ -21,3 +21,14 @@ function exactMatch(drivers, attribute) {
     return driver[key] === attribute[key];
   })
 }
+
+function exactMatchToList(drivers, attribute) {
+  return drivers
+      .filter(function (driver){
+      let key = Object.keys(attribute)[0];
+      return driver[key] === attribute[key];
+      })
+      .map(function (driver){
+        return driver.name
+      })
+}
