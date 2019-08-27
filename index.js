@@ -14,7 +14,7 @@ function driverNamesWithRevenueOver(arr, rev){
 function exactMatch(arr, obj){
   const newArr = [];
   for(let i in arr) {
-    if(arr[i].name === Object.values(obj)[0] || arr[i].revenue === Object.values(obj)[0]){
+    if(Object.values(arr[i]).includes(Object.values(obj)[0])){
     newArr.push(arr[i]);
       }
     }
@@ -22,11 +22,6 @@ function exactMatch(arr, obj){
 }
 
 function exactMatchToList(arr, obj){
-  const newArr = [];
-  for(let i in arr) {
-    if(arr[i].name === Object.values(obj)[0] || arr[i].revenue === Object.values(obj)[0]){
-    newArr.push(arr[i].name);
-      }
-    }
-  return newArr;
+  const newArr = exactMatch(arr, obj);
+  return newArr.map(function (driver) { return driver.name });
 }
