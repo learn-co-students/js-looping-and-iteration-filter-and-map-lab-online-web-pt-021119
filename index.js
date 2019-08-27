@@ -10,3 +10,23 @@ function driverNamesWithRevenueOver(arr, rev){
   }
   return nameArr;
 }
+
+function exactMatch(arr, obj){
+  const newArr = [];
+  for(let i in arr) {
+    if(arr[i].name === Object.values(obj)[0] || arr[i].revenue === Object.values(obj)[0]){
+    newArr.push(arr[i]);
+      }
+    }
+  return newArr;
+}
+
+function exactMatchToList(arr, obj){
+  const newArr = [];
+  for(let i in arr) {
+    if(arr[i].name === Object.values(obj)[0] || arr[i].revenue === Object.values(obj)[0]){
+    newArr.push(arr[i].name);
+      }
+    }
+  return newArr;
+}
