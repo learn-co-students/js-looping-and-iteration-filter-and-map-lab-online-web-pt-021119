@@ -10,9 +10,7 @@ function driverNamesWithRevenueOver(array, amount){
 };
 
 function exactMatch(array, attribute){
-  let tempKey = Object.keys(attribute)[0];
-  let tempValue = Object.values(attribute)[0];
-  let newArray = array.filter(driver => driver[tempKey]===tempValue);
+  let newArray = array.filter(driver => driver.name===attribute.name || driver.revenue===attribute.revenue);
   return newArray;
 };
 
@@ -21,3 +19,10 @@ function exactMatchToList(array, attribute){
   let answer = newArray.map(driver => driver['name']);
   return answer;
 };
+
+// function exactMatch(array, attribute){
+//   let tempKey = Object.keys(attribute)[0];
+//   let tempValue = Object.values(attribute)[0];
+//   let newArray = array.filter(driver => driver[tempKey]===tempValue);
+//   return newArray;
+// };
